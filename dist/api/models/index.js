@@ -1,0 +1,13 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Report = exports.BanAppeal = exports.Ban = exports.PostRecord = exports.Anon = exports.Board = exports.Post = exports.Thread = exports.UserNote = exports.User = void 0;
+exports.User = require('./user.model');
+exports.UserNote = require('./userNote.model');
+exports.Thread = require('./thread.model');
+exports.Post = require('./post.model');
+exports.Board = require('./board.model');
+exports.Anon = require('./anon.model');
+exports.PostRecord = require('./postRecord.model');
+exports.Ban = require('./ban.model');
+exports.BanAppeal = require('./banAppeal.model');
+exports.Report = require('./report.model');

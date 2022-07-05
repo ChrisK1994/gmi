@@ -1,0 +1,14 @@
+<div class="flex align-items-center justify-content-center h-screen">
+  <p-card class="flex align-items-center justify-content-center mb-2">
+    <img width="160px" alt="Image" src="{{ fileUrl }}" />
+    <div class="flex align-items-center justify-content-center mb-2">
+      {{ currentUser?.email }}
+    </div>
+    <div class="flex align-items-center justify-content-center mb-2">
+      {{ currentUser?.role }}
+    </div>
+    <button pButton label="Log out" class="w-12" (click)="logout()"></button>
+  </p-card>
+</div>
+
+<router-outlet></router-outlet>

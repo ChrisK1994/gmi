@@ -1,0 +1,75 @@
+<div class="flex align-items-center justify-content-center h-screen">
+  <p-card header="Log in">
+    <form
+      [formGroup]="loginForm"
+      #formDir="ngForm"
+      (ngSubmit)="loginForm.valid && login()"
+    >
+      <div class="field">
+        <label for="email">Email</label>
+        <input
+          id="email"
+          aria-describedby="email-help"
+          pInputText
+          [class.ng-invalid]="
+            email && email.invalid && (email.dirty || email.touched)
+          "
+          formControlName="email"
+          class="inputfield w-full"
+        />
+        <div
+          *ngIf="email.invalid && (email.dirty || email.touched)"
+          class="alert alert-danger"
+        >
+          <small
+            *ngIf="email?.errors?.required"
+            id="email-help"
+            class="p-error p-d-block"
+            >Email is required</small
+          >
+          <small
+            *ngIf="email?.errors?.email"
+            id="email-help"
+            class="p-error p-d-block"
+            >Invalid format</small
+          >
+        </div>
+      </div>
+      <div class="field">
+        <label for="password">Password</label>
+        <p-password
+          [toggleMask]="true"
+          [feedback]="false"
+          [class.ng-invalid]="
+            password && password.invalid && (password.dirty || password.touched)
+          "
+          formControlName="password"
+          [style]="{ width: '100%' }"
+          [inputStyle]="{ width: '100%' }"
+        ></p-password>
+        <div
+          *ngIf="password.invalid && (password.dirty || password.touched)"
+          class="alert alert-danger"
+        >
+          <small
+            *ngIf="password?.errors?.required"
+            id="password-help"
+            class="p-error p-d-block"
+            >Password is required</small
+          >
+        </div>
+      </div>
+      <div class="field">
+        <button pButton label="Log in" type="submit" class="w-12"></button>
+      </div>
+      <div class="field">
+        <button
+          pButton
+          label="Register"
+          class="w-12"
+          routerLink="/auth/register"
+        ></button>
+      </div>
+    </form>
+  </p-card>
+</div>
